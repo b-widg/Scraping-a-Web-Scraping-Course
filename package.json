@@ -1,0 +1,28 @@
+{
+  "name": "scraping-a-web-scraping-course",
+  "version": "1.0.0",
+  "description": "Example of scraping several pages on a site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-widg/Scraping-a-Web-Scraping-Course.git"
+  },
+  "keywords": [
+    "Web",
+    "Scraping",
+    "Cheerio",
+    "Node.js"
+  ],
+  "author": "b-widg",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/b-widg/Scraping-a-Web-Scraping-Course/issues"
+  },
+  "homepage": "https://github.com/b-widg/Scraping-a-Web-Scraping-Course#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10"
+  }
+}
