@@ -3,7 +3,7 @@ const axios = require('axios').default;
 const cheerio = require('cheerio');
 
 // getSessionUrls() returns an array of all URLs that need to be visied by visiting the site's enrollment page.
-// The session titles are scraped and used to crearte the URL to each session.
+// The session titles are scraped and used to create the URL to each session.
 
 // Converts Session Title into full URL to that session.
 // Example Title: 'Lesson 8. Solutions to Other Web Scraping “Gotchas” You May Encounter'
@@ -22,8 +22,9 @@ const formatTitleForUrl = (title) => {
   return formattedTitle;
 };
 
-const getSessionUrls = () => {
-  axios
+module.exports.getSessionUrls = async () => {
+  let sessionUrls = [];
+  await axios
     .get('https://gohighbrow.com/portfolio/build-your-own-web-scraping-tool/')
     .then((response) => {
       const html = response.data;
@@ -37,19 +38,19 @@ const getSessionUrls = () => {
         // Remove last element as it should be '+ Quiz'
         sessionTitles.pop();
         // Convert array of session titles to array of foll URLs.
-        const sessionUrls = sessionTitles.map((title) => {
+        sessionUrls = sessionTitles.map((title) => {
           return formatTitleForUrl(title);
         });
         // console.log(sessionUrls);
-        return sessionUrls;
       });
     })
     .catch((error) => {
       console.log(`ERROR: ${error}`);
     });
-  // .then(() => {
-  //   console.log(`Well .then(), I guess we're done...`);
-  // });
+  return sessionUrls;
 };
 
-module.exports = getSessionUrls;
+// (async () => {
+//   sessionUrls = await getSessionUrls();
+//   console.log('RETURNED SESSION URLs', sessionUrls);
+// })();
