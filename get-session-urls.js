@@ -40,7 +40,7 @@ const getSessionUrls = () => {
         const sessionUrls = sessionTitles.map((title) => {
           return formatTitleForUrl(title);
         });
-        console.log(sessionUrls);
+        // console.log(sessionUrls);
         return sessionUrls;
       });
     })
