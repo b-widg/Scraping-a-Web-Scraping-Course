@@ -2,7 +2,7 @@ const axios = require('axios').default;
 const cheerio = require('cheerio');
 
 // getPageData returns the HTML for the entire section from the picture
-// through the social mesia links
+// through the social mesia links for a single page
 
 module.exports.getPageData = async (url) => {
   let body;

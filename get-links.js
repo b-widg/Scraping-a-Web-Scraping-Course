@@ -3,9 +3,9 @@ const axios = require('axios').default;
 const cheerio = require('cheerio');
 
 // getSessionUrls() returns an array of all URLs that need to be visied by visiting the site's enrollment page.
-// The session titles are scraped and used to create the URL to each session.
+// The lesson titles are scraped and used to create the URL to each lesson.
 
-// Converts Session Title into full URL to that session.
+// Converts Lesson Title into full URL to that lesson.
 // Example Title: 'Lesson 8. Solutions to Other Web Scraping “Gotchas” You May Encounter'
 // Result shoule be: 'https://gohighbrow.com/Solutions-to-Other-Web-Scraping-Gotchas-You-May-Encounter'
 const formatTitleForUrl = (title) => {
@@ -22,8 +22,8 @@ const formatTitleForUrl = (title) => {
   return formattedTitle;
 };
 
-module.exports.getSessionUrls = async () => {
-  let sessionUrls = [];
+module.exports.getLessonUrls = async () => {
+  let lessonUrls = [];
   await axios
     .get('https://gohighbrow.com/portfolio/build-your-own-web-scraping-tool/')
     .then((response) => {
@@ -34,23 +34,23 @@ module.exports.getSessionUrls = async () => {
         const titlesString = $(this).text();
         // Titles are in a string.  split(os.EOL) splits them to an array based on operating
         // system's end of line character.
-        const sessionTitles = titlesString.split(os.EOL);
+        const lessonTitles = titlesString.split(os.EOL);
         // Remove last element as it should be '+ Quiz'
-        sessionTitles.pop();
-        // Convert array of session titles to array of foll URLs.
-        sessionUrls = sessionTitles.map((title) => {
+        lessonTitles.pop();
+        // Convert array of lesson titles to array of foll URLs.
+        lessonUrls = lessonTitles.map((title) => {
           return formatTitleForUrl(title);
         });
-        // console.log(sessionUrls);
+        // console.log(lessonUrls);
       });
     })
     .catch((error) => {
       console.log(`ERROR: ${error}`);
     });
-  return sessionUrls;
+  return lessonUrls;
 };
 
 // (async () => {
-//   sessionUrls = await getSessionUrls();
-//   console.log('RETURNED SESSION URLs', sessionUrls);
+//   lessonUrls = await getLessonUrls();
+//   console.log('RETURNED SESSION URLs', lessonUrls);
 // })();
