@@ -12,15 +12,9 @@ module.exports.getPageData = async (url) => {
       const html = response.data;
       const $ = cheerio.load(html);
       body = $('.col-sm-8:first-child');
-      // console.log(body.html());
     })
     .catch((error) => {
       console.log(`ERROR: ${error}`);
     });
   return body.html();
 };
-
-// (async () => {
-//   const pageData = await getPageData(url);
-//   console.log('RETURNED PAGE DATA', pageData);
-// })();

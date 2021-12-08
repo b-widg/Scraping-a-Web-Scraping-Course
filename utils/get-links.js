@@ -41,7 +41,6 @@ module.exports.getLessonUrls = async () => {
         lessonUrls = lessonTitles.map((title) => {
           return formatTitleForUrl(title);
         });
-        // console.log(lessonUrls);
       });
     })
     .catch((error) => {
@@ -49,8 +48,3 @@ module.exports.getLessonUrls = async () => {
     });
   return lessonUrls;
 };
-
-// (async () => {
-//   lessonUrls = await getLessonUrls();
-//   console.log('RETURNED SESSION URLs', lessonUrls);
-// })();

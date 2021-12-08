@@ -1,14 +1,14 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
-const GetLinks = require('./get-links');
-const GetPage = require('./get-page');
 const ejs = require('ejs');
 const express = require('express');
+const GetLinks = require('./utils/get-links');
+const GetPage = require('./utils/get-page');
+
 const app = express();
 
 const PORT = 3000;
 
-//app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
