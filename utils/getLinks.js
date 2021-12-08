@@ -37,7 +37,7 @@ module.exports.getLessonUrls = async () => {
         const lessonTitles = titlesString.split(os.EOL);
         // Remove last element as it should be '+ Quiz'
         lessonTitles.pop();
-        // Convert array of lesson titles to array of foll URLs.
+        // Convert array of lesson titles to array of full URLs.
         lessonUrls = lessonTitles.map((title) => {
           return formatTitleForUrl(title);
         });
