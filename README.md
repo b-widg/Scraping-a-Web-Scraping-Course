@@ -34,4 +34,4 @@ And that's about it. Navigate to [localhost:3000](http://localhost:3000/). Every
 
 This is for educational purposes only. Please do not upload this as a live web site. It would probably be a copyright violation, but at the very least it would be incredibly rude.
 
-The articles themselves are very good. I highly recommend them to anyone getting started in web scraping. I intentionally included the author info, the site's affiliate links, and social media links in the scrape so if you scrape the content and like it. Perhaps you can help them out.
+The articles themselves are very good. I highly recommend them to anyone getting started in web scraping. I intentionally included the author info, the site's affiliate links, and social media links in the scrape so if you scrape the content and like it, perhaps you can help them out.
