@@ -2,8 +2,8 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const ejs = require('ejs');
 const express = require('express');
-const GetLinks = require('./utils/get-links');
-const GetPage = require('./utils/get-page');
+const GetLinks = require('./utils/getLinks');
+const GetPage = require('./utils/getPage');
 
 const app = express();
 
